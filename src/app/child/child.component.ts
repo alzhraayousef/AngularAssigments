@@ -28,7 +28,7 @@ export class ChildComponent implements OnInit {
  
   SayWelcome()
   {
-    console.log("hello");
+    console.log("hello from child");
   }
 
 }

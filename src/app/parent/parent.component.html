@@ -1,5 +1,4 @@
 <p>parent works!</p>
-<app-child (childEvent)="productList2=$event"></app-child>
 <button (click)="getData()">Get Data </button>
 <table *ngIf="flag" class="table bg-primary text-white table-hover border w-75 m-5">
     <tr *ngFor="let product of productList2">
@@ -10,3 +9,5 @@
         <td><img [src]="product.img" style="width: 100px; height: 100px;"></td>
     </tr>
 </table>
+
+<app-child (childEvent)="productList2=$event"></app-child>

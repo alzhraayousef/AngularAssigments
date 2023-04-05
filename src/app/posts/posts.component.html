@@ -1,0 +1,13 @@
+
+<div class="container ">
+<div class="card m-2" *ngFor="let post of postList">
+    <div class="card-header">
+        {{post.id}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{post.title}}</h5>
+      <p class="card-text">{{post.body}}</p>
+      <button (click)="viewPostComments(post.id)" class="btn btn-primary">view post comments</button>
+    </div>
+  </div>
+</div>

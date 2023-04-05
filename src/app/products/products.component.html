@@ -1,45 +1,64 @@
 
-<br><br>
+<!-- <br><br>
 <h1>{{storeName|uppercase}}</h1>
-<img class="m-5" [src]="storeLogo">
+<img class="m-5" [src]="storeLogo"> -->
 <!--Q1-1-->
-<h3 class="m-5" *ngIf="discount!='No Discount'">We offer an explicit discount of {{discount}}</h3> 
+<!-- <h3 class="m-5" *ngIf="discount!='No Discount'">We offer an explicit discount of {{discount}}</h3> 
 <br>
 <br>
-<br>
+<br> -->
 
 <!--Q1-2-->
-<select class="form-select w-50 m-5 text-primary">
+<!-- <select class="form-select w-50 m-5 text-primary">
     <option *ngFor="let category of categoryList">{{category.name}}</option>
 </select>
 <br>
-<br><br>
+<br><br> -->
 
 
 <!--Q1-2-->
-<table *ngIf="isPurshased" class="table bg-primary text-white table-hover border w-75 m-5">
+<div class="container">
+    <!--*ngIf="isPurshased"-->
+<table class="table bg-primary text-white table-hover border w-100 ">
+    <!-- <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Quantity</td>
+        <td>Price</td>
+        <td>Discount</td>
+        <td>Image</td>
+    </tr> -->
     <tr *ngFor="let product of productList">
         <td>{{product.ID}}</td>
         <td>{{product.name}}</td>
         <td>{{product.quantity}}</td>
         <td>{{product.price|percent}}</td>
+        <td>Discount: {{product.discount}}</td>
         <td><img [src]="product.img" style="width: 100px; height: 100px;"></td>
     </tr>
 </table>
 
+<button class="btn btn-primary" (click)="goToProductsWithDiscount()">ProductsWithDiscount</button> &nbsp; &nbsp;
+<button class="btn btn-primary" (click)="goToProductsWithoutDiscount()">ProductsWithoutDiscount</button>
+<router-outlet></router-outlet>
+
+</div>
+
+
+<!-- 
 <br>
-<br><br>
+<br><br> -->
 
 <!--Q1-4-->
-<input type="text" class="form-control w-50 m-5" [(ngModel)]="clientName"/>
+<!-- <input type="text" class="form-control w-50 m-5" [(ngModel)]="clientName"/>
 <span class="m-5"> {{clientName}} </span>
 <br>
-<br>
+<br> -->
 
 <!--Q1-5-->
-<button class="btn btn-primary w-25 m-5" (click)="show()">Buy</button>
+<!-- <button class="btn btn-primary w-25 m-5" (click)="show()">Buy</button>
 <div *ngIf="!isPurshased">
     Thanks for purchasing from our Store {{clientName}}
-</div>
+</div> -->
 
 
