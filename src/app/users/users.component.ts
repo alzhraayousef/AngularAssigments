@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../Services/user.service';
-import { User } from '../Shared Classes and types/User';
+import { IUser } from '../Shared Classes and types/IUser';
 
 @Component({
   selector: 'app-users',
@@ -9,7 +9,7 @@ import { User } from '../Shared Classes and types/User';
 })
 export class UsersComponent implements OnInit {
 
-  userList:User[]=[];
+  userList:IUser[]=[];
   errorMessage:string="";
   constructor(private userService:UserService) { }
 

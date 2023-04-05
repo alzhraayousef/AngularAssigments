@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../Shared Classes and types/User';
+import { IUser } from '../Shared Classes and types/IUser';
 import { throwError } from 'rxjs/internal/observable/throwError';
 import { catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -13,10 +13,10 @@ export class UserService {
  
   constructor(private http:HttpClient) { }
 
-  GetAllUsers():Observable<User[]>
+  GetAllUsers():Observable<IUser[]>
   {
 
-    return this.http.get<User[]>(this._userUrl).pipe(catchError((err: any) => {
+    return this.http.get<IUser[]>(this._userUrl).pipe(catchError((err: any) => {
       return throwError(() => err.message || "server error");
     }));
   }

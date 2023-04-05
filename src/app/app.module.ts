@@ -16,6 +16,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { CommentsComponent } from './comments/comments.component';
 import { ProductsWithDiscountComponent } from './products-with-discount/products-with-discount.component';
 import { ProductsWithoutDiscountComponent } from './products-without-discount/products-without-discount.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { ProductsWithoutDiscountComponent } from './products-without-discount/pr
     PostsComponent,
     CommentsComponent,
     ProductsWithDiscountComponent,
-    ProductsWithoutDiscountComponent
+    ProductsWithoutDiscountComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
