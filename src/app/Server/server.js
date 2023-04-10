@@ -19,13 +19,15 @@ app.listen(PORT,function(){
 });
 
 users=[];
-var LocalStorage = require('node-localstorage').LocalStorage, //npm install
+//npm install node-localstorage
+var LocalStorage = require('node-localstorage').LocalStorage, 
 localStorage = new LocalStorage('./scratch');
 localStorage.setItem('users',JSON.stringify(users));
 
 app.post('/register',function(req,res){
     users=JSON.parse(localStorage.getItem('users'));
     users.push(req.body);
+    console.log(req.body)
     localStorage.setItem('users',JSON.stringify(users));
     res.status(200).send({"data":"Recived successfully"});
 })
@@ -36,7 +38,8 @@ app.post('/login',function(req,res){
     for (const iterator of users) {
         if(iterator.username==req.body.username&&iterator.password==req.body.password)
         {
-            res.status(200).send({"data":"Welcome "+req.body.username});
+            console.log(req.body)
+            res.status(200).send({"data":"Welcome "+req.body.userName});
         }
     }
     res.status(422).send({"error":"Ivalid Information"});
